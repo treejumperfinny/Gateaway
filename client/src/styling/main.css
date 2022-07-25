@@ -1,0 +1,111 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
+/* @import "bulma/sass/utilities/_all.sass"; */
+
+
+:root {
+    --mainColor: #1D263B;
+    --mainColorLight: #5C6784;
+    --secondaryColor: #CA054D;
+    --textColor: #A0EADE;
+}
+
+nav {
+    /* display: block; */
+    align-items: left;
+    /* justify-content: space-between; */
+    width: 15rem;
+    height: 100vh;
+    padding-left: 30px;
+    position: fixed;
+    background-color: #0b2769;
+    color: var(--textColor);
+    font-size: 25pt;
+    font-weight: 600;
+}
+
+.hoppsnav {
+    align-items: center;
+}
+
+nav a{
+    /* margin: 0;
+    padding: 0; */
+    color: var(--textColor);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    height: 5rem;
+}
+
+nav a:hover{
+    color: var(--secondaryColor)
+}
+
+.nav-a:last-child {
+    margin-top: auto;
+}
+
+.nav-button {
+    /* padding: 8px; */
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--textColor);
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+h3 {
+    font-size: 20pt;
+    color: var(--secondaryColor);
+    padding-bottom: 25px;
+    padding-top: 50px;
+}
+
+.form{
+    align-items: center;
+}
+
+.field {
+    padding-left: 25rem;
+    padding-right: 25rem;
+}
+
+.input {
+    margin-top: 1rem;
+}
+
+.label {
+    font-size: 14pt;
+}
+
+.button {
+    /* height: 100%; */
+    width: 100%;
+    margin-top: 25px;
+    font-size: larger;
+}
+
+.placeholder {
+    width: 250px;
+    height: 100%;
+}
+
+.image {
+    width: 48px;
+    height: 50px;
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+  
+.cardsc {
+    display: inline-block;
+}

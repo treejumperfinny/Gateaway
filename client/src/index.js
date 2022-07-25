@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Home from './components/Home'
+import Logon from './components/Logon';
+import Register from './components/Register';
+import Flights from './components/Flights';
+import Airports from './components/Airports';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="/welcome" element={<Home />} />
+          <Route path="/logon" element={<Logon />} />
+          <Route path="/register" element={<Register/>} /> 
+          <Route path="/flights" element={<Flights />} />
+          <Route path="/airports" element={<Airports />} />           
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+)
+
+
+
+
