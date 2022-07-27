@@ -11,21 +11,24 @@
 }
 
 nav {
-    /* display: block; */
+    /* display: block;
     align-items: left;
-    /* justify-content: space-between; */
-    width: 15rem;
+    justify-content: space-between;
+    width: 10rem; */
     height: 100vh;
     padding-left: 30px;
     position: fixed;
-    background-color: #0b2769;
+    /* background-color: #0b276975;
+    background-image: linear-gradient(to right, #0b2769,  rgba(255, 255, 255, 0));
     color: var(--textColor);
     font-size: 25pt;
-    font-weight: 600;
+    font-weight: 600; */
 }
 
 .hoppsnav {
-    align-items: center;
+    /* align-items: center; */
+    width: 100px;
+    height: auto;
 }
 
 nav a{
@@ -39,13 +42,13 @@ nav a{
     height: 5rem;
 }
 
-nav a:hover{
+/* nav a:hover{
     color: var(--secondaryColor)
-}
+} */
 
-.nav-a:last-child {
+/* .nav-a:last-child {
     margin-top: auto;
-}
+} */
 
 .nav-button {
     /* padding: 8px; */
@@ -66,13 +69,10 @@ h3 {
     padding-top: 50px;
 }
 
-.form{
-    align-items: center;
-}
-
 .field {
-    padding-left: 25rem;
-    padding-right: 25rem;
+    width: 350px;
+    align-items: center;
+    display: inline-block;
 }
 
 .input {
@@ -108,4 +108,8 @@ h3 {
   
 .cardsc {
     display: inline-block;
+}
+
+.btn-deets {
+    width: 65px;
 }

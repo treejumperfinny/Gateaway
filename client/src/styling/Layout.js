@@ -2,8 +2,7 @@ import biglogo from '../images/navbarlogo.png';
 import React from 'react';
 import "../styling/main.css"
 
-
-function Flights() {
+function Layout() {
     return (
         <>
             <h3>Flights</h3>
@@ -40,8 +39,7 @@ function Flights() {
                     </div>
 
                 </div>
-
-
+                <div class="scrolling-wrapper">
                 <div class="columns">
                     <div class="column">
                         First column
@@ -134,6 +132,7 @@ function Flights() {
                             </div>
 
                         </div>
+                    </div>
                     </div>
                 </div>
                 <div class="box">
@@ -300,4 +299,4 @@ function Flights() {
     )
 }
 
-export default Flights;
+export default Layout;

@@ -3,9 +3,12 @@ import React, { useState } from "react";
 // import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 import "../styling/main.css"
+import { useNavigate } from "react-router-dom";
 
 function Register() {
     const [newUser, setNewUser] = useState({})
+
+    let navigate = useNavigate()
 
     function handleNewUser(e) {
         e.preventDefault()
@@ -26,6 +29,7 @@ function Register() {
             body: JSON.stringify(addNewUser)
         })
             .then((response) => response.json)
+            .then(() => navigate('/letsgo'))
     }
 
     function handleInputChange(e) {

@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   scope :api do
   
-  resources :sessions, only: [:create]  
-  delete :logout, to: "sessions#logout"
-  get :logged_in, to: "sessions#logged_in"
-  resources :users, only: [:create, :show, :index, :destroy]
+    resources :users, only: [:create, :index, :destroy]
+    get '/me', to: 'users#show'
+    resources :flights 
+    resources :sessions, only: [:create, :destroy]  
+    post "/login", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
+  
   end
   
   # Routing logic: fallback requests for React Router.

@@ -6,9 +6,7 @@ function Landing() {
     <>
       <h2 className="title">gateaway</h2>
       <div className="App-header">
-        <p>
-          Welcome! We are still under construction.
-        </p>
+       
          <img src={biglogo} className="hoppsflite" alt="logo" />
         <div className='learning'>
           Learn how to use gateaway with Hopps and their airplane companion Flite. 

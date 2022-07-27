@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # before_action :set_active_user
+    skip_before_action :authorize_user, only: [:create]
 
     def index
         users = User.all
@@ -14,6 +14,14 @@ class UsersController < ApplicationController
             render json: { status: :created, user: user}
         else
             render json: { status: 500 }
+        end
+    end
+
+    def show
+        if active_user
+            render json: active_user
+        else
+            render json: { status: :unauthorized }
         end
     end
 

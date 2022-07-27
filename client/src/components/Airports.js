@@ -1,11 +1,12 @@
 import React from "react";
+import Map from "./Map";
 import biglogo from '../images/navbarlogo.png';
 
 function Airport() {
     return (
         <>
-            
-            <h1 class="title">amenities close by</h1>
+
+            <h1 class="title">Nearby Amenities</h1>
             <section className='testing scrolling'>
                 Something about amenities close by
                 <div class="scrolling-wrapper">
@@ -57,7 +58,7 @@ function Airport() {
                             </div>
                         </div>
                         <div class="column">
-                          shop
+                            shop
                             <div class="cardsc">
                                 <div class="card-image">
                                     <img src={biglogo} className="placeholder" alt="logo" />
@@ -106,9 +107,9 @@ function Airport() {
                 </div>
             </section>
             <section className="map of airport goes here">
-                <h1 class="title">Map of _Insert Airport Name Here_</h1>
+                <h1 class="title">_Insert Airport Name Here_</h1>
                 <div class="box">
-                    Map baybay
+                    <Map />
                 </div>
             </section>
         </>
