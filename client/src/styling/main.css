@@ -1,7 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css";
-/* @import "bulma/sass/utilities/_all.sass"; */
-
 
 :root {
     --mainColor: #1D263B;
@@ -10,55 +8,58 @@
     --textColor: #A0EADE;
 }
 
+.logon-page, .reg-page {
+    background-color: #e8f1f3;
+}
+
 nav {
     /* display: block;
     align-items: left;
     justify-content: space-between;
-    width: 10rem; */
+    width: 10rem;
     height: 100vh;
-    padding-left: 30px;
-    position: fixed;
-    /* background-color: #0b276975;
-    background-image: linear-gradient(to right, #0b2769,  rgba(255, 255, 255, 0));
+    padding-left: 30px; 
+    position: fixed; */
+    background-color: #e8f1f3;
+    /* background-image: linear-gradient(to right, #ffffff,  rgba(255, 255, 255, 0.274));  */
     color: var(--textColor);
-    font-size: 25pt;
-    font-weight: 600; */
+    font-size: 15pt;
+    /* font-weight: 600; */
 }
 
 .hoppsnav {
     /* align-items: center; */
-    width: 100px;
-    height: auto;
+    width: auto;
+    height: 85px;
 }
 
-nav a{
-    /* margin: 0;
-    padding: 0; */
-    color: var(--textColor);
+/* nav a{
+    /* /* margin: 0; */
+    /* padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 5px; */
+    /* color: var(--textColor);
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: left;
-    height: 5rem;
+    height: 2rem; 
+}*/
+
+nav a:hover{
+    color: var(--secondaryColor)
 }
 
-/* nav a:hover{
-    color: var(--secondaryColor)
-} */
-
-/* .nav-a:last-child {
-    margin-top: auto;
-} */
 
 .nav-button {
     /* padding: 8px; */
     cursor: pointer;
-    background: transparent;
+    /* background: transparent;
     border: none;
     outline: none;
     color: var(--textColor);
     visibility: hidden;
-    opacity: 0;
+    opacity: 0; */
 }
 
 
@@ -67,6 +68,15 @@ h3 {
     color: var(--secondaryColor);
     padding-bottom: 25px;
     padding-top: 50px;
+}
+
+h4 {
+    color: var(--mainColor)
+}
+
+h1 {
+    color: var(--mainColor)
+
 }
 
 .field {
@@ -86,8 +96,8 @@ h3 {
 .button {
     /* height: 100%; */
     width: 100%;
-    margin-top: 25px;
-    font-size: larger;
+    /* margin-top: 25px; */
+    /* font-size: larger; */
 }
 
 .placeholder {
@@ -104,12 +114,29 @@ h3 {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
+    padding: 50px;
 }
   
 .cardsc {
     display: inline-block;
 }
 
-.btn-deets {
-    width: 65px;
+.btn-details {
+   display: flex;
 }
+
+.gap {
+    width: 10px;
+    height: auto;
+    display: inline-block;
+}
+
+.loader {
+    height: 450px;
+    width: 450px;
+    margin: auto;
+ }
+
+ .rails-flights {
+    margin: 0px 15px;
+ }

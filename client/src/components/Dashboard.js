@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styling/main.css"
 import Flight from "./Flight";
-import Segment from "./Segment";
+import Segments from "./Segments";
 
 function Dashboard() {
     const [newFlight, setNewFlight] = useState({})
@@ -46,29 +46,29 @@ function Dashboard() {
     }
 
     const removeFlight = (trip) => {
-        setFlights([...flights].filter((flight) => flight.id !== trip.id)) 
+        setFlights([...flights].filter((flight) => flight.id !== trip.id))
     }
 
     const selectFlight = (flight) => {
         setSelectedFlight(flight)
     }
- 
+
     return (
         <>
-            <h1 class="title">Dashboard</h1>
-            <p> This is your dash.
-                Enter yout flight information here
-                Input your flight information.
-                Maybe old flight information is shown here?
-            </p>
-            <div className="form" class="field">
-                <form onSubmit={handleAddFlight}>
-                    <label class="label">
-                        Airline:
-                        <div class="control">
-                            <input class="input" name="airline" onChange={handleInputChange} />
-                        </div>
-                    </label>
+            <h3>Dashboard</h3>           
+            <div className="form centered-content" class="field">
+                <form onSubmit={handleAddFlight}>                    
+                        <label class="label">
+                            Airline:
+                            <select class="select control field" name="airline" onChange={handleInputChange}>
+                                <option></option>
+                                <option value="Delta">Delta Airlines</option>
+                                <option value="American">American Airlines</option>
+                                <option value="Southwest">Southwest Airlines</option>
+                                <option value="United">United Airlines</option>
+                            </select>
+                        </label>
+                    <p>When adding your flight number be sure to rememeber to add the letters before the numbers.</p>
                     <label class="label">
                         Flight Number:
                         <div class="control">
@@ -78,7 +78,7 @@ function Dashboard() {
                     <label class="label">
                         Departure Date:
                         <div class="control">
-                            <input class="input" name="departure_date" type="datetime-local" onChange={handleInputChange} />
+                            <input class="input" name="departure_date" type="date" onChange={handleInputChange} />
                         </div>
                     </label>
                     <button class="button is-link is-rounded" onClick={handleAddFlight}>
@@ -87,20 +87,20 @@ function Dashboard() {
                 </form>
             </div>
             <h3>Flights</h3>
-            <p>
-                Hello there. Packed? Ready? Let's go on a grand adventure!
-            </p>
             <div class="scrolling-wrapper">
                 <div class="columns">
-                    
-                        {showFlights()}
-                                                             
+
+                    {showFlights()}
+
                 </div>
             </div>
-            <div className="segement-summary">
-                details of the trip go here
-                <Segment flight={selectedFlight} />
-            </div>
+            { selectFlight === {} ? "" :
+                <div className="segement-summary">
+                    <h2 class="centered-content title is-2">Details for {selectedFlight.airline} flight {selectedFlight.flight_number}</h2>
+                    <Segments flight={selectedFlight} class="is-active" />
+                </div>
+            }
+           
         </>
     )
 }

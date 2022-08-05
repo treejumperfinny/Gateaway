@@ -1,55 +1,109 @@
-import biglogo from '../images/navbarlogo.png';
-import React, { useEffect, useState } from 'react';
+import { DateTime } from 'luxon';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import "../styling/main.css"
 
-function Segment({ flight }) {
-    const [segment, setSegment] = useState({})
+function Segment({ segment }) {
 
-    // useEffect(() => segmentSummary, [])
 
-    // function segmentSummary(){
-    //     fetch(`http://api.aviationstack.com/v1/flights?access_key=83d4b7589b6b8edeecb92814b7debe91&flight_icao=${flight.flight_number}`)
-    //         .then(response => response.json())
-    //         .then((segment) => setSegment(segment))
-    // }
-
-    return (
-        <>
-            <h3> Journey Segment In Detail</h3>
-            <p>Flight information from API goes here</p>
-
-            <div class="columns">
-                <div class="column">
-                    <h2 class="title"> Time At Destination </h2>
-                    <div class="card">
-                        <div class="card-content">
-                            <h3 class="title">Insert Time At Destination desitnation timezone</h3>
-                            {flight.airline}
-                            {/* {segment.arrival.timezone}
-                            {segment.arrival.scheduled} */}
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <h2 class="title"> Time At origin </h2>
-                    <div class="card">
-                        <div class="card-content">
-                            <p>Insert Time at "origin"</p>
-                            {/* {segment.destination.timezone}
-                            {segment.destination.scheduled} */}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="box">
-                {/* You will be arriving at {segment.arrival.gate} at Terminal {segment.arrival.terminal} in {segment.arrival.airport}. */}
-            </div>
-            <div>
-                <p>Click below for to and go to amentites</p>
-                <a href="/airports"><img src={biglogo} className="hoppsflite" alt="logo" /></a>
-            </div>
-        </>
-    )
+	return (
+		<>
+			<div class="columns">
+				<div class="column">
+					<h1 class="title centered-content">🛫 Departure 🛫</h1>
+					<div class="card">
+						<div class="card-content">
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">When:</h4>
+								</div>
+								<div class="column is-size-4">
+									{DateTime.fromISO(segment.departure.scheduled_at).setZone(segment.departure.timezone).toLocaleString(DateTime.DATETIME_FULL)}
+								</div>
+							</div>
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">Airport:</h4>
+								</div>
+								<div class="column is-size-4">
+									{segment.departure.airport} &#40;{segment.departure.code}&#41;
+								</div>
+							</div>
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">Gate:</h4>
+								</div>
+								<div class="column is-size-4">
+									{segment.departure.gate}
+								</div>
+								<div class="column is-3">
+								<Link to={`/airports/${segment.departure.code}/${segment.departure.gate}`} className="button is-link is-rounded">View Details</Link>
+								</div>
+							</div>
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">Delay:</h4>
+								</div>
+								<div class="column is-size-4">
+									{segment.departure.delay_in_minutes === undefined ? "On time" : `${segment.departure.delay_in_minutes} minutes`}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column">
+					<h1 class="title centered-content">🛬 Arrival 🛬</h1>
+					<div class="card">
+						<div class="card-content">
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">When:</h4>
+								</div>
+								<div class="column is-size-4">
+									{DateTime.fromISO(segment.arrival.scheduled_at).setZone(segment.arrival.timezone).toLocaleString(DateTime.DATETIME_FULL)}
+								</div>
+							</div>
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">Airport:</h4>
+								</div>
+								<div class="column is-size-4">
+									{segment.arrival.airport} &#40;{segment.arrival.code}&#41;
+								</div>
+							</div>
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">Gate:</h4>
+								</div>
+								<div class="column is-size-4">
+									{segment.arrival.gate}
+								</div>
+								<div class="column is-3">
+									<Link to={`/airports/${segment.arrival.code}/${segment.arrival.gate}`} className="button is-link is-rounded">View Details</Link>
+								</div>
+							</div>
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">Delay:</h4>
+								</div>
+								<div class="column is-size-4">
+									{segment.arrival.delay_in_minutes === undefined ? "On time" : `${segment.arrival.delay_in_minutes} minutes`}
+								</div>
+							</div>
+							<div class="columns is-gapless">
+								<div class="column is-2">
+									<h4 class="title is-4">Bags:</h4>
+								</div>
+								<div class="column is-size-4">
+									Carousel {segment.arrival.baggage_carousel}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+	)
 }
 
 export default Segment;

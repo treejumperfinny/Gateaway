@@ -6,8 +6,10 @@ function Home() {
     <>
       <h2 className="title">gateaway</h2>
       <div className="App-header">
+        <p>Let us help you be quicker and more efficent.</p>
+        <p>Less time worrying and more time enjoying your trip.</p>
         <p>
-          Working on it! Come back and check in on us later!
+          Constantly updating. Please check back for more updates. 
         </p>
         <img src={hoppsflite} className="hoppsflite" alt="logo" />
       </div>

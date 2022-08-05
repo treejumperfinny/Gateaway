@@ -1,8 +1,6 @@
 import "../styling/main.css"
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import hoppsflite from '../images/hoppsflite.png'
 import { removeUser } from "../slicers/userSlice";
 
 function Navbar() {
@@ -20,30 +18,39 @@ function Navbar() {
 
     function showLoggedInMenuItems() {
         return <>
-            <li><a href="/welcome">Home</a></li>
-            <li><a href="/dash">Flights</a></li>
-            <li><a href="/airports">Airports</a></li>
-            <li><button onClick={logout}>Log Out</button></li>
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/dash">Flights</a>
+                <a class="navbar-item" href="/airports">Airports</a>
+            </div>
+            <div class="navbar-end">
+                <div class="buttons">
+                    <button class="button is-link is-rounded" onClick={logout}>Log Out</button></div>
+            </div>
         </>
     }
 
     function showLoggedOutMenuItems() {
         return <>
-            <li><a href="/welcome">Home</a></li>
-            <li><a href="/register">Register</a></li>
-            <li><a href="/logon">Log In</a></li>
+            <div class="navbar-start">
+                <a class="navbar-item" href="/">Home</a>
+                <a class="navbar-item" href="/register">Register</a>
+            </div>
+            <div class="navbar-end">
+                <div class="buttons">
+                    <a class="navbar-item" href="/logon"><button class="button is-link is-rounded">Log In</button></a></div>
+            </div>
         </>
     }
 
     return (
         <>
-            <nav>
-                <aside class="menu">
-                    <img src={hoppsflite} className="hoppsnav" alt="logo" />
-                    <ul class="menu-list">
-                        {user !== null ? showLoggedInMenuItems() : showLoggedOutMenuItems() }
-                    </ul>
-                </aside>
+            <nav class="navbar is-transparent" >
+                <div class="navbar is-fixed-top">
+                    <div class="navbar-menu">
+                        {user !== null ? showLoggedInMenuItems() : showLoggedOutMenuItems()}
+                    </div>
+                </div>
             </nav>
         </>
     )

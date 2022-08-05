@@ -32,7 +32,8 @@ function Logon() {
 
     return (
         <>
-            <h3>Welcome Back. Log in below and away we will go!</h3>
+        <div className='logon-page centered-content'>
+            <h3 className='centered-content'>Welcome Back. Log in below and away we will go!</h3>
             <div className="form login" class="field">
                 <form>
                     <label class="label">
@@ -52,6 +53,7 @@ function Logon() {
                     </button>
                 </form>
             </div>
+        </div>
         </>
     )
 }

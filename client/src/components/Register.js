@@ -38,45 +38,47 @@ function Register() {
 
     return (
         <>
-            <div className="form" class="field">
-                <h3>Register with us today!</h3>
-                <form onSubmit={handleNewUser}>
-                    <label class="label">
-                        First Name:
-                        <div class="control">
-                            <input class="input" name="first_name" onChange={handleInputChange} />
-                        </div>
-                    </label>
+            <div className="reg-page  centered-content" style={{backgroundColor: "#e8f1f3"}}>
+                <div className="form" class="field">
+                    <h3>Register with us today!</h3>
+                    <form onSubmit={handleNewUser}>
+                        <label class="label">
+                            First Name:
+                            <div class="control">
+                                <input class="input" name="first_name" onChange={handleInputChange} />
+                            </div>
+                        </label>
 
-                    <label class="label">
-                        Last Name:
-                        <div class="control">
-                            <input class="input" name="last_name" onChange={handleInputChange} />
-                        </div>
-                    </label>
+                        <label class="label">
+                            Last Name:
+                            <div class="control">
+                                <input class="input" name="last_name" onChange={handleInputChange} />
+                            </div>
+                        </label>
 
-                    <label class="label">
-                        Email:
-                        <div class="control">
-                            <input class="input" name="email" onChange={handleInputChange} />
-                        </div>
-                    </label>
-                    <label class="label">
-                        Phone:
-                        <div class="control">
-                            <input class="input" name="phone" onChange={handleInputChange} />
-                        </div>
-                    </label>
-                    <label class="label">
-                        Password:
-                        <div class="control">
-                            <input class="input" type="password" name="password" onChange={handleInputChange} />
-                        </div>
-                    </label>
-                    <button class="button is-link is-rounded">
-                        Sign Up
-                    </button>
-                </form>
+                        <label class="label">
+                            Email:
+                            <div class="control">
+                                <input class="input" name="email" onChange={handleInputChange} />
+                            </div>
+                        </label>
+                        <label class="label">
+                            Phone:
+                            <div class="control">
+                                <input class="input" name="phone" onChange={handleInputChange} />
+                            </div>
+                        </label>
+                        <label class="label">
+                            Password:
+                            <div class="control">
+                                <input class="input" type="password" name="password" onChange={handleInputChange} />
+                            </div>
+                        </label>
+                        <button class="button is-link is-rounded">
+                            Sign Up
+                        </button>
+                    </form>
+                </div>
             </div>
         </>
     )

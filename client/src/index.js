@@ -20,11 +20,12 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="/welcome" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/logon" element={<Logon />} />
           <Route path="/register" element={<Register />} />
           <Route path="/flights" element={<Flight />} />
           <Route path="/airports" element={<Airports />} />
+          <Route path="/airports/:airportCode/:gateNumber" element={<Airports />} />
           <Route path="/dash" element={<Dashboard />} />
           <Route path="/letsgo" element={<Starting />} />
         </Route>

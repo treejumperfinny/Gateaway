@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_26_141547) do
+ActiveRecord::Schema.define(version: 2022_07_29_165128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,16 +28,21 @@ ActiveRecord::Schema.define(version: 2022_07_26_141547) do
   create_table "bathrooms", force: :cascade do |t|
     t.string "name"
     t.text "location"
-    t.integer "x_coord"
-    t.integer "y_coord"
+    t.decimal "x_coord"
+    t.decimal "y_coord"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "bathrooms_gates", id: false, force: :cascade do |t|
+    t.bigint "gate_id", null: false
+    t.bigint "bathroom_id", null: false
+  end
+
   create_table "concessions", force: :cascade do |t|
     t.string "name"
-    t.integer "x_coord"
-    t.integer "y_coord"
+    t.decimal "x_coord"
+    t.decimal "y_coord"
     t.string "opening_time"
     t.string "closing_time"
     t.boolean "open"
@@ -52,11 +57,13 @@ ActiveRecord::Schema.define(version: 2022_07_26_141547) do
 
   create_table "concourses", force: :cascade do |t|
     t.string "name"
-    t.integer "x_coord"
-    t.integer "y_coord"
+    t.decimal "x_coord"
+    t.decimal "y_coord"
     t.string "cardinal_direction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "airport_id"
+    t.index ["airport_id"], name: "index_concourses_on_airport_id"
   end
 
   create_table "flights", force: :cascade do |t|
@@ -64,17 +71,19 @@ ActiveRecord::Schema.define(version: 2022_07_26_141547) do
     t.string "flight_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "departure_date"
+    t.date "departure_date"
     t.integer "user_id"
   end
 
   create_table "gates", force: :cascade do |t|
     t.string "name"
-    t.integer "x_coord"
-    t.integer "y_coord"
+    t.decimal "x_coord"
+    t.decimal "y_coord"
     t.string "timezone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "concourse_id"
+    t.index ["concourse_id"], name: "index_gates_on_concourse_id"
   end
 
   create_table "segments", force: :cascade do |t|

@@ -1,19 +1,3 @@
-// import React from "react";
-// import GoogleMapReact from 'google-map-react';
-
-// function Map() {
-//     return (
-//         <>
-//             <div style={{ height: '100vh', width: '100%' }}>
-//                 <GoogleMapReact
-//                     bootstrapURLKeys={{ key: "AIzaSyCkHzx8g1sFjADAAjTzZhtDxcCYrKut9o0" }} />
-//             </div>
-//         </>
-//     )
-// }
-
-// export default Map;
-
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 

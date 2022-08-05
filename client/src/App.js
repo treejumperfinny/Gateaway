@@ -20,19 +20,20 @@ function App() {
       .then((user) => { dispatch(setUser(user)) })
   }, [dispatch])
 
-
-
   return (
     <>
       <Navbar />
 
-      <div className="App">
+      <div className="App container">
         <Outlet />
-        {/* <h1 class="title">
-          Welcome!
-        </h1>
-        <p>We are still under construction.</p> */}
       </div>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p> 
+            <strong>GateAway</strong> by <a href="https://github.com/treejumperfinny">Aya R</a>. Made with ❤️ in Ohio.
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
