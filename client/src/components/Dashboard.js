@@ -56,8 +56,8 @@ function Dashboard() {
     return (
         <>
             <h3>Dashboard</h3>           
-            <div className="form centered-content" class="field">
-                <form onSubmit={handleAddFlight}>                    
+            <div class="dashflight field">
+                <form className="centered-content" onSubmit={handleAddFlight}>                    
                         <label class="label">
                             Airline:
                             <select class="select control field" name="airline" onChange={handleInputChange}>

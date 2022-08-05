@@ -37,7 +37,7 @@ function Segments({ flight }) {
         }
 
         setLoaded(false)
-        fetch(`http://api.aviationstack.com/v1/flights?access_key=78667d5d3a9d5c29376328f607687c76&flight_icao=${flight.flight_number}`)
+        fetch(`https://api.aviationstack.com/v1/flights?access_key=fef5700f671c8396292b1032dd84da7d&flight_icao=${flight.flight_number}`)
             .then(response => response.json())
             .then((segments) => {
                 setSegments(segments.data.filter(data => data.flight_date === flight.departure_date).map(cleanedData))
@@ -51,7 +51,7 @@ function Segments({ flight }) {
 
     return (
         <>
-            {loaded === false ? <ReactLoading type={"spinningBubbles"} color={"#5C6784"} className='loader' height={350} width={350}/> : showSegments()}
+            {loaded === false ? <div class="centered-content"><ReactLoading type={"cylon"} color={"#5C6784"} className="bars" height={350} width={350}/></div> : showSegments()}
         </>
     )
 }

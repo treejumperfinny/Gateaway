@@ -140,3 +140,12 @@ h1 {
  .rails-flights {
     margin: 0px 15px;
  }
+
+ .dashflight.field {
+    margin: 0 auto;
+    display: block;
+ }
+
+ .bars {
+    margin: 0 auto;
+ }
