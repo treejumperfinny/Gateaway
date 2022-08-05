@@ -37,7 +37,7 @@ function Segments({ flight }) {
         }
 
         setLoaded(false)
-        fetch(`https://api.aviationstack.com/v1/flights?access_key=fef5700f671c8396292b1032dd84da7d&flight_icao=${flight.flight_number}`)
+        fetch(`https://api.aviationstack.com/v1/flights?access_key=27d3a73f985813713114dc738c3d0950&flight_icao=${flight.flight_number}`)
             .then(response => response.json())
             .then((segments) => {
                 setSegments(segments.data.filter(data => data.flight_date === flight.departure_date).map(cleanedData))
